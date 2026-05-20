@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SunPay Solar | Affordable Clean Energy Installments</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- AliceBlue & White Design System Architecture --- */
+        :root {
+            --bg-aliceblue: #f0f8ff;    /* Core Theme AliceBlue */
+            --bg-white: #ffffff;        /* Pure White */
+            --primary-blue: #3a86c8;    /* Professional Clean Solar Blue */
+            --accent-yellow: #f59e0b;  /* Solar Energy Glow Gold */
+            --text-dark: #1e293b;      /* Deep Slate for High Contrast Text */
+            --text-muted: #64748b;     /* Muted Grey for Secondary Labels */
+            --border-color: #e2e8f0;   /* Soft Divider Line Tint */
+            --font-stack: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --radius: 12px;
+            --shadow: 0 4px 20px -2px rgba(58, 134, 200, 0.08);
+        }
+
+        /* --- Global Reset Layout Mechanics --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font-stack);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* --- Header Navigation Area --- */
+        .app-header {
+            background-color: var(--bg-white);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 20px 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .brand-logo i {
+            color: var(--accent-yellow);
+        }
+
+        .main-nav__list {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .main-nav__link {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .main-nav__link:hover {
+            color: var(--primary-blue);
+        }
+
+        /* --- Hero Framing Section --- */
+        .hero {
+            background-color: var(--bg-aliceblue);
+            padding: 100px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero__title {
+            font-size: 46px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero__title span {
+            color: var(--primary-blue);
+        }
+
+        .hero__description {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        /* CTA Button Blueprint */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--primary-blue);
+            color: var(--bg-white);
+            padding: 14px 32px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: var(--radius);
+            box-shadow: 0 4px 14px rgba(5a, 134, 200, 0.3);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #2b6da3;
+            transform: translateY(-2px);
+        }
+
+        /* Decorative Mock Image Element representing solar architecture */
+        .hero-image-mock {
+            background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+            border: 4px solid var(--bg-white);
+            border-radius: 20px;
+            height: 380px;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-blue);
+            font-size: 80px;
+        }
+
+        /* --- Installment Services Module --- */
+        .services {
+            padding: 80px 0;
+            background-color: var(--bg-white);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 50px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--bg-aliceblue);
+            padding: 40px 30px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            background-color: var(--bg-white);
+        }
+
+        .service-card__icon {
+            font-size: 36px;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        .service-card__title {
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        /* --- Testimonial Block Module --- */
+        .testimonials {
+            background-color: var(--bg-aliceblue);
+            padding: 80px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background-color: var(--bg-white);
+            padding: 35px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .testimonial-card__quote {
+            font-style: italic;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+
+        .testimonial-card__author {
+            font-weight: 700;
+            font-size: 15px;
+            color: var(--primary-blue);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* --- Contact & Location Architecture --- */
+        .contact {
+            padding: 80px 0;
+            background-color: var(--bg-white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info__details {
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .contact-item i {
+            font-size: 20px;
+            color: var(--primary-blue);
+            margin-top: 4px;
+        }
+
+        .contact-item address {
+            font-style: normal;
+            font-size: 16px;
+        }
+
+        /* Pure CSS Modular Form Controls */
+        .contact-form {
+            background-color: var(--bg-aliceblue);
+            padding: 40px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-white);
+            border-radius: 8px;
+            font-size: 15px;
+            color: var(--text-dark);
+            outline: none;
+        }
+
+        .form-input:focus {
+            border-color: var(--primary-blue);
+        }
+
+        .btn--submit {
+            width: 100%;
+            border: none;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        /* --- Footer Base Layer --- */
+        .app-footer {
+            background-color: var(--text-dark);
+            color: var(--bg-aliceblue);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .app-footer p {
+            opacity: 0.8;
+        }
+
+        /* --- Responsive Viewport Adaptation --- */
+        @media (max-width: 768px) {
+            .hero-grid, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero { padding: 60px 0; text-align: center; }
+            .hero__title { font-size: 32px; }
+            .main-nav__list { display: none; } /* Kept simple without heavy toggle logic */
+            .contact-form { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. SEMANTIC HEADER & NAVIGATION -->
+    <header class="app-header">
+        <div class="container nav-wrapper">
+            <a href="#" class="brand-logo">
+                <i class="fa-solid fa-solar-panel"></i> SunPay
+            </a>
+            <nav class="main-nav" aria-label="Primary Navigation">
+                <ul class="main-nav__list">
+                    <li><a href="#services" class="main-nav__link">Installments</a></li>
+                    <li><a href="#testimonials" class="main-nav__link">Testimonials</a></li>
+                    <li><a href="#contact" class="main-nav__link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 2. MAIN SECTION COMPONENT WRAPPER -->
+    <main>
+        
+        <!-- HERO CALL-TO-ACTION LAYOUT -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <h1 class="hero__title">Switch to Solar Now, <span>Pay Over Time</span></h1>
+                    <p class="hero__description">Break free from soaring electricity bills. Get professional solar setup panels installed today with our zero-stress flexible monthly installment financing options.</p>
+                    <a href="#contact" class="btn"><i class="fa-solid fa-calendar-check"></i> Calculate Payment Plan</a>
+                </div>
+                <div class="hero-image-mock" aria-hidden="true">
+                    <i class="fa-solid fa-sun"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINANCIAL SERVICES INFORMATION MODULE -->
+        <section class="services" id="services">
+            <div class="container">
+                <h2 class="section-title">Our Flexible Installment Services</h2>
+                <div class="services-grid">
+                    
+                    <article class="service-card">
+                        <div class="service-card__icon"><i class="fa-solid fa-percent"></i></div>
+                        <h3 class="service-card__title">0% Down Payment</h3>
+                        <p class="service-card__description">Qualifying homeowners can get entire rooftop configurations fitted instantly without an initial lump-sum barrier requirement.</p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-card__icon"><i class="fa-solid fa-handshake-angle"></i></div>
+                        <h3 class="service-card__title">Custom Spread Options</h3>
+                        <p class="service-card__description">Choose payment milestones that work for you. Conveniently slice your equipment costs over 12, 24, or 36 flexible months.</p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-card__icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                        <h3 class="service-card__title">Full Plan Maintenance</h3>
+                        <p class="service-card__description">Enjoy absolute peace of mind. Regular maintenance checks are fully bundled straight into your plan throughout the payment cycle.</p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIAL FEEDBACK MODULE -->
+        <section class="testimonials" id="testimonials" aria-label="Customer Reviews">
+            <div class="container">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <div class="testimonial-grid">
+                    
+                    <blockquote class="testimonial-card">
+                        <p class="testimonial-card__quote">"The installment plan made transitioning completely effortless. Our monthly solar bill is cheaper than our previous regular electricity utility tokens!"</p>
+                        <cite class="testimonial-card__author"><i class="fa-solid fa-circle-user"></i> Amara K.</cite>
+                    </blockquote>
+
+                    <blockquote class="testimonial-card">
+                        <p class="testimonial-card__quote">"Amazing customer support. The application verification process took less than 48 hours, and installation happened the following day."</p>
+                        <cite class="testimonial-card__author"><i class="fa-solid fa-circle-user"></i> Tunde O.</cite>
+                    </blockquote>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECURE SYSTEM CONTACT ADDRESS AND SECTIONS -->
+        <section class="contact" id="contact">
+            <div class="container contact-grid">
+                
+                <div class="contact-info">
+                    <h2 style="font-size: 32px; font-weight: 800; margin-bottom: 20px;">Get In Touch With Us</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 30px;">Ready to run clean appliances powered by the sun? Reach out to schedule a home energy audit assessment with an agent today.</p>
+                    
+                    <div class="contact-info__details">
+                        <div class="contact-item">
+                            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                            <address><strong>Corporate HQ:</strong><br>72 Renewable Way, Clean Energy District, Port Harcourt, Rivers State</address>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                            <p><strong>Phone Support:</strong><br>+234 9033561947</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                            <p><strong>Inquiries:</strong><br>installments@sunpaysolar.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- APPLICATION ENQUIRY LEAD CAPTURE FORM -->
+                <!-- Change your opening form tag to look like this -->
+                <form class="contact-form" id="solarPlanForm" aria-label="Solar Installment Application Form">
+                    <div class="form-group">
+                        <label Lifor="fullName">Full Name</label>
+                        <input type="text" id="fullName" class="form-input" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="emailAddress">Email Address</label>
+                        <input type="email" id="emailAddress" class="form-input" required placeholder="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="planPreference">Preferred Payment Plan</label>
+                        <select id="planPreference" class="form-input" style="height: 45px;">
+                            <option value="12">12 Months Installments</option>
+                            <option value="24">24 Months Installments</option>
+                            <option value="36">36 Months Installments</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn--submit">Submit Free Evaluation</button>
+                </form>
+    </footer>
+    <script>
+    document.getElementById('solarPlanForm').addEventListener('submit', function(event) {
+        // 1. Prevent the page from reloading/refreshing
+        event.preventDefault();
+
+        // 2. Your WhatsApp phone number (Include your country code, NO spaces, NO plus sign)
+        // Example: '2348030001234' for Nigeria (+234)
+        const whatsappNumber = '2349033561947'; 
+
+        // 3. Grab the input values from the form fields
+        const name = document.getElementById('fullName').value;
+        const email = document.getElementById('emailAddress').value;
+        const plan = document.getElementById('planPreference');
+        const planText = plan.options[plan.selectedIndex].text;
+
+        // 4. Construct a beautifully formatted text message
+        const message = `Hello SunPay Solar! ☀️%0A%0A` +
+                        `I would like to request a *Free Evaluation* for my home:%0A%0A` +
+                        `👤 *Name:* ${encodeURIComponent(name)}%0A` +
+                        `✉️ *Email:* ${encodeURIComponent(email)}%0A` +
+                        `💳 *Preferred Plan:* ${encodeURIComponent(planText)}`;
+
+        // 5. Generate the WhatsApp API URL
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+
+        // 6. Open the link in a brand new browser tab
+        window.open(whatsappUrl, '_blank');
+    });
+</script>
+
+</body>
+</html>
